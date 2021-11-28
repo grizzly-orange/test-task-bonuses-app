@@ -1,5 +1,7 @@
 package com.grizzlyorange.bonusesdata.api
 
+import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
+
 interface BonusesRepository {
-    fun getBonuses(): Int
+    suspend fun getBonusesInfo(): BonusesInfo
 }

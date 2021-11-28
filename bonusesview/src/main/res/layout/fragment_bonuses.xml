@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="@{bonusesVM.bonuses.toString()}"
+            android:text="@{bonusesVM.bonuses.totalBonusesAmount}"
             app:layout_constraintStart_toEndOf="@id/txtBonusesAmountLabel"
             app:layout_constraintTop_toTopOf="parent" />
 

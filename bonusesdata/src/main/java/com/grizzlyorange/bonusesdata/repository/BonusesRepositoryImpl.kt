@@ -1,9 +1,10 @@
 package com.grizzlyorange.bonusesdata.repository
 
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
+import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
 
 class BonusesRepositoryImpl : BonusesRepository {
-    override fun getBonuses(): Int {
-        return (1..100).random()
+    override suspend fun getBonusesInfo(): BonusesInfo {
+        return BonusesInfo((1..100).random())
     }
 }
