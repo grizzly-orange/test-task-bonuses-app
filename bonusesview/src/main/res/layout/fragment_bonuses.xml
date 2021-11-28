@@ -4,37 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="bonusesVM"
             type="com.grizzlyorange.bonusesview.view.BonusesViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout"
+    <RelativeLayout
+        android:id="@+id/RelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.BonusesFragment">
+        android:layout_height="match_parent">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:id="@+id/txtBonusesAmountLabel"
+        <ImageView
+            android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Bonuses"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/logo_margin_start"
+            android:layout_marginTop="@dimen/logo_margin_top"
+            app:srcCompat="@drawable/logotype_image" />
 
-        <TextView
-            android:id="@+id/txtBonusesAmount"
+        <ImageView
+            android:id="@+id/btInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="@{bonusesVM.bonuses.totalBonusesAmount}"
-            app:layout_constraintStart_toEndOf="@id/txtBonusesAmountLabel"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/bt_info_margin_top"
+            android:layout_marginEnd="@dimen/bt_info_margin_end"
+            app:srcCompat="@drawable/button_info_image" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/btNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/plate"
+            android:layout_alignEnd="@id/plate"
+            android:layout_alignBottom="@id/plate"
+            android:layout_marginEnd="@dimen/bt_info_margin_end"
+            android:elevation="@dimen/on_plate_evaluation"
+            app:srcCompat="@drawable/button_next_image" />
+
+        <TextView
+            android:id="@+id/txtTotalBonusesAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/plate"
+            android:layout_alignTop="@id/plate"
+            android:layout_marginStart="@dimen/txt_bonuses_amount_margin_start"
+            android:layout_marginTop="@dimen/txt_bonuses_amount_margin_top"
+            android:elevation="@dimen/on_plate_evaluation"
+            android:text="TextView"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtBurningDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/plate"
+            android:layout_alignBottom="@id/plate"
+            android:layout_marginStart="@dimen/txt_burning_date_margin_start"
+            android:layout_marginBottom="@dimen/txt_burning_date_margin_bottom"
+            android:elevation="@dimen/on_plate_evaluation"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtBurningBonusesAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/plate"
+            android:layout_marginStart="@dimen/txt_burning_bonuses_amount_margin_start"
+            android:layout_marginBottom="@dimen/txt_burning_bonuses_amount_margin_bottom"
+            android:layout_toEndOf="@id/fire"
+            android:elevation="@dimen/on_plate_evaluation"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/fire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/plate"
+            android:layout_marginStart="@dimen/fire_margin_start"
+            android:layout_marginBottom="@dimen/fire_margin_bottom"
+            android:layout_toEndOf="@id/txtBurningDate"
+            android:elevation="@dimen/on_plate_evaluation"
+            app:srcCompat="@drawable/fire_icon" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/plate"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="false"
+            android:layout_marginStart="@dimen/bonuses_plate_margin_start"
+            android:layout_marginTop="@dimen/bonuses_plate_margin_top"
+            android:layout_marginEnd="@dimen/bonuses_plate_margin_end"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="@dimen/plate_evaluation">
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/btNext"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/bottom_rectangle_margin_top"
+            app:srcCompat="@drawable/bottom_rectangle" />
+
+    </RelativeLayout>
 </layout>

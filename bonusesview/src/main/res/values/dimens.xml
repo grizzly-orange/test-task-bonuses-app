@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_margin_start">25dp</dimen>
+    <dimen name="logo_margin_top">25dp</dimen>
+    <dimen name="bt_info_margin_end">28dp </dimen>
+    <dimen name="bt_info_margin_top">25dp</dimen>
+    <dimen name="bonuses_plate_margin_start">20dp</dimen>
+    <dimen name="bonuses_plate_margin_end">20dp</dimen>
+    <dimen name="bonuses_plate_margin_top">69dp</dimen>
+    <dimen name="bt_next_margin_end">18dp</dimen>
+    <dimen name="bottom_rectangle_margin_top">53dp</dimen>
+    <dimen name="txt_bonuses_amount_margin_top">18dp</dimen>
+    <dimen name="txt_bonuses_amount_margin_start">20dp</dimen>
+    <dimen name="txt_burning_date_margin_bottom">19dp</dimen>
+    <dimen name="txt_burning_date_margin_start">20dp</dimen>
+    <dimen name="fire_margin_start">8dp</dimen>
+    <dimen name="fire_margin_bottom">23dp</dimen>
+    <dimen name="txt_burning_bonuses_amount_margin_bottom">19dp</dimen>
+    <dimen name="txt_burning_bonuses_amount_margin_start">8dp</dimen>
+    <dimen name="plate_evaluation">10dp</dimen>
+    <dimen name="on_plate_evaluation">12dp</dimen>
+</resources>
