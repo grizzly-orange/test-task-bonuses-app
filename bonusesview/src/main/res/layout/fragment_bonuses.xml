@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/plate"
             android:layout_alignEnd="@id/plate"
-            android:layout_alignBottom="@id/plate"
+            android:layout_marginTop="@dimen/bt_next_margin_top"
             android:layout_marginEnd="@dimen/bt_info_margin_end"
             android:elevation="@dimen/on_plate_evaluation"
             app:srcCompat="@drawable/button_next_image" />

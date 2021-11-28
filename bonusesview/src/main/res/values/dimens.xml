@@ -7,8 +7,9 @@
     <dimen name="bonuses_plate_margin_start">20dp</dimen>
     <dimen name="bonuses_plate_margin_end">20dp</dimen>
     <dimen name="bonuses_plate_margin_top">69dp</dimen>
+    <dimen name="bt_next_margin_top">39dp</dimen>
     <dimen name="bt_next_margin_end">18dp</dimen>
-    <dimen name="bottom_rectangle_margin_top">53dp</dimen>
+    <dimen name="bottom_rectangle_margin_top">17dp</dimen>
     <dimen name="txt_bonuses_amount_margin_top">18dp</dimen>
     <dimen name="txt_bonuses_amount_margin_start">20dp</dimen>
     <dimen name="txt_burning_date_margin_bottom">19dp</dimen>
