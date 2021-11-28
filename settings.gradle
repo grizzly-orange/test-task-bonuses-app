@@ -1,3 +1,4 @@
 rootProject.name = "BonusesApp"
 include ':app'
 include ':bonusesview'
+include ':bonusesdata'
