@@ -5,10 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import com.grizzlyorange.bonusesview.databinding.FragmentBonusesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BonusesFragment : Fragment() {
+
+    private var _binding: FragmentBonusesBinding? = null
+    private val binding get() = _binding!!
+
+    private val bonusesViewModel: BonusesViewModel by viewModels<BonusesViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +25,12 @@ class BonusesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bonuses, container, false)
+
+        _binding = FragmentBonusesBinding.inflate(inflater, container, false)
+
+        binding.bonusesVM = bonusesViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        return binding.root
     }
 }
