@@ -9,7 +9,7 @@
         android:id="@+id/fragmentBonuses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.grizzlyorange.bonusesview.BonusesFragment">
+        android:name="com.grizzlyorange.bonusesview.view.BonusesFragment">
 
     </androidx.fragment.app.FragmentContainerView>
 

@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesview
+package com.grizzlyorange.bonusesview.view
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

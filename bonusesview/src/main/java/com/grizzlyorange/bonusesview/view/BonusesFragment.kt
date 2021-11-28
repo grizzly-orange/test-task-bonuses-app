@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesview
+package com.grizzlyorange.bonusesview.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
