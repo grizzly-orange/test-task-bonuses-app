@@ -24,7 +24,7 @@
             android:indeterminate="true"
             app:indicatorColor="@color/loading_indicator_color"
             app:trackColor="@color/loading_indicator_track_color"
-            android:visibility="@{bonusesVM.isLoading() ? View.VISIBLE : View.GONE}">
+            android:visibility="@{bonusesVM.isLoading ? View.VISIBLE : View.GONE}">
 
         </com.google.android.material.progressindicator.LinearProgressIndicator>
 
@@ -106,7 +106,9 @@
             android:layout_marginBottom="@dimen/fire_margin_bottom"
             android:layout_toEndOf="@id/txtBurningDate"
             android:elevation="@dimen/on_plate_evaluation"
-            app:srcCompat="@drawable/fire_icon" />
+            app:srcCompat="@drawable/fire_icon"
+            android:visibility="@{bonusesVM.isSuccess ? View.VISIBLE : View.GONE}"
+            />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/plate"

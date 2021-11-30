@@ -1,7 +1,7 @@
 package com.grizzlyorange.bonusesview.data
 
 data class BonusesViewInfo (
-    val totalBonusesAmount: Int = 0,
-    val burningBonusesAmount: Int = 0,
-    val burningDateInMillis: Long = 0
+    val totalBonusesAmount: Int? = null,
+    val burningBonusesAmount: Int? = null,
+    val burningDateInMillis: Long? = null
 )

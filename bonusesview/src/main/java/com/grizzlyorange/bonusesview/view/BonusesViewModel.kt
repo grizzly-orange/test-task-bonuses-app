@@ -27,7 +27,13 @@ class BonusesViewModel @Inject constructor(
 
     val isLoading: LiveData<Boolean> = _bonusesRequestResult.switchMap { bonusesRequestState ->
         liveData {
-            emit(bonusesRequestState is Resource.Loading )
+            emit(bonusesRequestState is Resource.Loading)
+        }
+    }
+
+    val isSuccess: LiveData<Boolean> = _bonusesRequestResult.switchMap { bonusesRequestState ->
+        liveData {
+            emit(bonusesRequestState is Resource.Success)
         }
     }
 
