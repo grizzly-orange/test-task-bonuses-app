@@ -3,6 +3,7 @@ package com.grizzlyorange.bonusesdata.repository
 import android.util.Log
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
 import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
+import com.grizzlyorange.bonusesdata.api.data.ClientIdentityData
 import com.grizzlyorange.bonusesdata.api.data.Resource
 import com.grizzlyorange.bonusesdata.repository.network.BonusesWebApi
 import com.grizzlyorange.bonusesdata.repository.network.data.AccessTokenRequestBody
@@ -19,11 +20,11 @@ class BonusesRepositoryImpl(
 ) : BonusesRepository {
     private val accessKey = "891cf53c-01fc-4d74-a14c-592668b7a03c"
 
-    override fun getBonusesInfo(): Flow<Resource<BonusesInfo>> {
+    override fun getBonusesInfo(clientIdentity: ClientIdentityData): Flow<Resource<BonusesInfo>> {
         return flow {
             try {
                 emit(Resource.Loading<BonusesInfo>())
-                val accessToken = loadAccessToken()
+                val accessToken = loadAccessToken(clientIdentity)
                 val bonusesResponse = loadBonusesInfo(accessToken)
                 emit(Resource.Success<BonusesInfo>(
                     convertBonusesResponse(bonusesResponse)))
@@ -33,9 +34,9 @@ class BonusesRepositoryImpl(
         }
     }
 
-    private suspend fun loadAccessToken(): String {
+    private suspend fun loadAccessToken(identityData: ClientIdentityData): String {
         return bonusesWebApi
-            .getToken(accessKey, AccessTokenRequestBody())
+            .getToken(accessKey, AccessTokenRequestBody.build(identityData))
             .accessToken
     }
 

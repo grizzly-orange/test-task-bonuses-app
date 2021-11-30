@@ -3,20 +3,24 @@ package com.grizzlyorange.bonusesview.view
 import androidx.lifecycle.*
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
 import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
+import com.grizzlyorange.bonusesdata.api.data.ClientIdentityData
 import com.grizzlyorange.bonusesdata.api.data.Resource
 import com.grizzlyorange.bonusesview.R
 import com.grizzlyorange.bonusesview.data.bonuses.BonusesMapper
 import com.grizzlyorange.bonusesview.data.bonuses.BonusesViewInfo
 import com.grizzlyorange.bonusesview.data.events.ErrorEvent
+import com.grizzlyorange.bonusesview.data.identity.ClientIdentity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class BonusesViewModel @Inject constructor(
-    private val bonusesRepository: BonusesRepository
+    private val bonusesRepository: BonusesRepository,
+    private val clientIdentity: ClientIdentity
 ) : ViewModel() {
 
-    private val _bonusesRequestResult: LiveData<Resource<BonusesInfo>> = bonusesRepository.getBonusesInfo().asLiveData()
+    private val _bonusesRequestResult: LiveData<Resource<BonusesInfo>> =
+        bonusesRepository.getBonusesInfo(getIdentity()).asLiveData()
 
     val bonuses: LiveData<BonusesViewInfo?> = _bonusesRequestResult.switchMap { bonusesResult ->
         liveData {
@@ -42,5 +46,9 @@ class BonusesViewModel @Inject constructor(
                 emit(ErrorEvent<Int>(R.string.messageBonusesInfoResultError))
             }
         }
+    }
+
+    private fun getIdentity(): ClientIdentityData {
+        return ClientIdentityData(clientIdentity.clientId, clientIdentity.deviceId)
     }
 }

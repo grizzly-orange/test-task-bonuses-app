@@ -2,6 +2,7 @@ package com.grizzlyorange.bonusesview.di
 
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
 import com.grizzlyorange.bonusesdata.api.BonusesRepositoryFactory
+import com.grizzlyorange.bonusesview.data.identity.ClientIdentity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,5 +15,10 @@ class DataSourceModule {
     @Provides
     fun getBonusesRepository(): BonusesRepository {
         return BonusesRepositoryFactory.getBonusesRepository()
+    }
+
+    @Provides
+    fun getClientIdentity(): ClientIdentity {
+        return ClientIdentity.getInstance()
     }
 }
