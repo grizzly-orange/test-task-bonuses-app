@@ -5,6 +5,25 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black_text">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- data for bonuses view, it overrides values in view lib -->
+    <!---->
+    <!--text colors -->
+    <color name="regular_text_color">#FF979797</color>
+
+    <color name="txt_bonuses_amount_text_color">@color/black_text</color>
+    <color name="txt_burning_date_text_color">@color/regular_text_color</color>
+    <color name="txt_burning_bonuses_amount_text_color">@color/regular_text_color</color>
+
+    <!--element colors -->
+    <color name="first_gradient_color">#FFD2333E</color>
+    <color name="second_gradient_color">#FFF54B55</color>
+
+    <color name="bt_info_gradient_start_color">#FFD2333E</color>
+    <color name="bt_info_gradient_end_color">#FFF54B55</color>
+    <color name="bt_next_color">#FFD4343F</color>
+    <color name="bottom_rectangle_gradient_start_color">@color/second_gradient_color</color>
+    <color name="bottom_rectangle_gradient_end_color">@color/first_gradient_color</color>
 </resources>

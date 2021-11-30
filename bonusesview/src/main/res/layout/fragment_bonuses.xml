@@ -54,7 +54,8 @@
             android:layout_marginTop="@dimen/txt_bonuses_amount_margin_top"
             android:elevation="@dimen/on_plate_evaluation"
             android:text="TextView"
-            android:textSize="24sp"
+            android:textColor="@color/txt_bonuses_amount_text_color"
+            android:textSize="@dimen/txt_bonuses_amount_text_size"
             android:textStyle="bold" />
 
         <TextView
@@ -67,7 +68,8 @@
             android:layout_marginBottom="@dimen/txt_burning_date_margin_bottom"
             android:elevation="@dimen/on_plate_evaluation"
             android:text="TextView"
-            android:textSize="16sp" />
+            android:textColor="@color/txt_burning_date_text_color"
+            android:textSize="@dimen/txt_burning_date_text_size" />
 
         <TextView
             android:id="@+id/txtBurningBonusesAmount"
@@ -79,7 +81,8 @@
             android:layout_toEndOf="@id/fire"
             android:elevation="@dimen/on_plate_evaluation"
             android:text="TextView"
-            android:textSize="16sp" />
+            android:textColor="@color/txt_burning_bonuses_amount_text_color"
+            android:textSize="@dimen/txt_burning_bonuses_amount_text_size" />
 
         <ImageView
             android:id="@+id/fire"

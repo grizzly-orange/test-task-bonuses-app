@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--data for bonuses view, it overrides values in view lib -->
+    <dimen name="txt_bonuses_amount_text_size">24sp</dimen>
+    <dimen name="txt_burning_date_text_size">16sp</dimen>
+    <dimen name="txt_burning_bonuses_amount_text_size">16sp</dimen>
+</resources>
