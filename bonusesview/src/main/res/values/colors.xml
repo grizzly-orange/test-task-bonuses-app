@@ -12,4 +12,6 @@
     <color name="bt_next_color">#FFD4343F</color>
     <color name="bottom_rectangle_gradient_start_color">#FFF54B55</color>
     <color name="bottom_rectangle_gradient_end_color">#FFD2333E</color>
+    <color name="loading_indicator_color">#FFD2333E</color>
+    <color name="loading_indicator_track_color">#FFF54B55</color>
 </resources>

@@ -21,4 +21,10 @@ class BonusesViewModel @Inject constructor(
             emit(BonusesMapper.fromDomainToView(bonusesResult.data))
         }
     }
+
+    val isLoading: LiveData<Boolean> = _bonusesRequestResult.switchMap { bonusesRequestState ->
+        liveData {
+            emit(bonusesRequestState is Resource.Loading )
+        }
+    }
 }
