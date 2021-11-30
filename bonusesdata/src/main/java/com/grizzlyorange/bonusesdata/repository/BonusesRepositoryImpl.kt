@@ -26,8 +26,8 @@ class BonusesRepositoryImpl(
                 emit(Resource.Loading<BonusesInfo>())
                 val accessToken = loadAccessToken(clientIdentity)
                 val bonusesResponse = loadBonusesInfo(accessToken)
-                emit(Resource.Success<BonusesInfo>(
-                    convertBonusesResponse(bonusesResponse)))
+                val bonusesInfo = convertBonusesResponse(bonusesResponse)
+                emit(Resource.Success<BonusesInfo>(bonusesInfo))
             } catch (e: Exception) {
                 emit(Resource.Error<BonusesInfo>("Error on receive or parse bonuses data"))
             }
