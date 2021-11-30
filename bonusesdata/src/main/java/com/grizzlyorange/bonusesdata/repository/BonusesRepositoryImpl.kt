@@ -1,11 +1,15 @@
 package com.grizzlyorange.bonusesdata.repository
 
+import android.util.Log
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
 import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
 import com.grizzlyorange.bonusesdata.repository.network.BonusesWebApi
 import com.grizzlyorange.bonusesdata.repository.network.data.AccessTokenRequestBody
 import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponse
+import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponseConvertor
 import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
 
 class BonusesRepositoryImpl(
     private val bonusesWebApi: BonusesWebApi
@@ -35,11 +39,6 @@ class BonusesRepositoryImpl(
     }
 
     private fun convertBonusesResponse(bonusesResponse: BonusesResponse): BonusesInfo {
-        return BonusesInfo(
-            bonusesResponse.data.currentQuantity,
-            bonusesResponse.data.forBurningQuantity,
-            //TODO: convert datetime
-            0
-        )
+        return BonusesResponseConvertor.convert(bonusesResponse)
     }
 }
