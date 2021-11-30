@@ -67,7 +67,7 @@
             android:layout_marginStart="@dimen/txt_burning_date_margin_start"
             android:layout_marginBottom="@dimen/txt_burning_date_margin_bottom"
             android:elevation="@dimen/on_plate_evaluation"
-            android:text="TextView"
+            app:bonusesBurningDateInMillis="@{bonusesVM.bonuses.burningDateInMillis}"
             android:textColor="@color/txt_burning_date_text_color"
             android:textSize="@dimen/txt_burning_date_text_size" />
 
