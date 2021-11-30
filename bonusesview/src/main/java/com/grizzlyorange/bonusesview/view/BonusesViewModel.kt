@@ -1,14 +1,13 @@
 package com.grizzlyorange.bonusesview.view
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
 import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
 import com.grizzlyorange.bonusesdata.api.data.Resource
 import com.grizzlyorange.bonusesview.R
-import com.grizzlyorange.bonusesview.data.BonusesMapper
-import com.grizzlyorange.bonusesview.data.BonusesViewInfo
-import com.grizzlyorange.bonusesview.data.ErrorEvent
+import com.grizzlyorange.bonusesview.data.bonuses.BonusesMapper
+import com.grizzlyorange.bonusesview.data.bonuses.BonusesViewInfo
+import com.grizzlyorange.bonusesview.data.events.ErrorEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

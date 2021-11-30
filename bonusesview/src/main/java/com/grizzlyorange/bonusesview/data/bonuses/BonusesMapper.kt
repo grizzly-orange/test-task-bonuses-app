@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesview.data
+package com.grizzlyorange.bonusesview.data.bonuses
 
 import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
 

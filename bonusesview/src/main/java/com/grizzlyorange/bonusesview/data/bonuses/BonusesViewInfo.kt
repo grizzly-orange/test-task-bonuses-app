@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesview.data
+package com.grizzlyorange.bonusesview.data.bonuses
 
 data class BonusesViewInfo (
     val totalBonusesAmount: Int? = null,

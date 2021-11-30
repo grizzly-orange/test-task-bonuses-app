@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesview.data
+package com.grizzlyorange.bonusesview.data.events
 
 open class Event<T>(private val content: T) {
     private var hasBeenHandled: Boolean = false
