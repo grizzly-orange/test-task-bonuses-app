@@ -5,8 +5,10 @@ import androidx.lifecycle.*
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
 import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
 import com.grizzlyorange.bonusesdata.api.data.Resource
+import com.grizzlyorange.bonusesview.R
 import com.grizzlyorange.bonusesview.data.BonusesMapper
 import com.grizzlyorange.bonusesview.data.BonusesViewInfo
+import com.grizzlyorange.bonusesview.data.ErrorEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -14,6 +16,7 @@ import javax.inject.Inject
 class BonusesViewModel @Inject constructor(
     private val bonusesRepository: BonusesRepository
 ) : ViewModel() {
+
     private val _bonusesRequestResult: LiveData<Resource<BonusesInfo>> = bonusesRepository.getBonusesInfo().asLiveData()
 
     val bonuses: LiveData<BonusesViewInfo?> = _bonusesRequestResult.switchMap { bonusesResult ->
@@ -25,6 +28,14 @@ class BonusesViewModel @Inject constructor(
     val isLoading: LiveData<Boolean> = _bonusesRequestResult.switchMap { bonusesRequestState ->
         liveData {
             emit(bonusesRequestState is Resource.Loading )
+        }
+    }
+
+    val isError: LiveData<ErrorEvent<Int>> = _bonusesRequestResult.switchMap { bonusesRequestState ->
+        liveData {
+            if (bonusesRequestState is Resource.Error) {
+                emit(ErrorEvent<Int>(R.string.messageBonusesInfoResultError))
+            }
         }
     }
 }

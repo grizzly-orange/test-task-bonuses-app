@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.grizzlyorange.bonusesview.databinding.FragmentBonusesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,9 +29,31 @@ class BonusesFragment : Fragment() {
 
         _binding = FragmentBonusesBinding.inflate(inflater, container, false)
 
-        binding.bonusesVM = bonusesViewModel
-        binding.lifecycleOwner = viewLifecycleOwner
+        initBinding()
+        initObservers()
 
         return binding.root
+    }
+
+    private fun initBinding() {
+        binding.bonusesVM = bonusesViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+    }
+
+    private fun initObservers() {
+        bonusesViewModel.isError.observe(viewLifecycleOwner, { errorEvent ->
+            errorEvent.getContentIfNotHandled()?.let { messageId ->
+                showErrorSnack(messageId)
+            }
+        })
+    }
+
+    private fun showErrorSnack(messageId: Int) {
+        view?.let {
+            Snackbar
+                .make(binding.bottom, messageId, Snackbar.LENGTH_LONG)
+                .setAnchorView(binding.errorMessagesAnchor)
+                .show()
+        }
     }
 }

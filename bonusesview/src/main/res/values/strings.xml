@@ -4,6 +4,8 @@
 
     <string name="txtBonusesBurningDate">%1$s сгорит</string>
 
+    <string name="messageBonusesInfoResultError">Не удалось загрузить информацию о бонусах</string>
+
     <!--Bonuses plurals-->
     <plurals name="bonusesAmount">
         <item quantity="one">%1$d бонус</item>

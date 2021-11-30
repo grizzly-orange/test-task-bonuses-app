@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <import type="android.view.View" />
         <variable
             name="bonusesVM"
@@ -135,5 +134,11 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/bottom_rectangle_margin_top"
             app:srcCompat="@drawable/bottom_rectangle" />
+
+        <View
+            android:id="@+id/errorMessagesAnchor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignBottom="@id/bottom" />
     </RelativeLayout>
 </layout>
