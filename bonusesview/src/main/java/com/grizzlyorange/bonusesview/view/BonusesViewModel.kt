@@ -14,9 +14,7 @@ import javax.inject.Inject
 class BonusesViewModel @Inject constructor(
     private val bonusesRepository: BonusesRepository
 ) : ViewModel() {
-    private val _bonusesRequestResult: LiveData<Resource<BonusesInfo>> = liveData {
-        emit(bonusesRepository.getBonusesInfo())
-    }
+    private val _bonusesRequestResult: LiveData<Resource<BonusesInfo>> = bonusesRepository.getBonusesInfo().asLiveData()
 
     val bonuses: LiveData<BonusesViewInfo?> = _bonusesRequestResult.switchMap { bonusesResult ->
         liveData {

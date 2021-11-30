@@ -8,6 +8,8 @@ import com.grizzlyorange.bonusesdata.repository.network.BonusesWebApi
 import com.grizzlyorange.bonusesdata.repository.network.data.AccessTokenRequestBody
 import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponse
 import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponseConvertor
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
@@ -17,13 +19,17 @@ class BonusesRepositoryImpl(
 ) : BonusesRepository {
     private val accessKey = "891cf53c-01fc-4d74-a14c-592668b7a03c"
 
-    override suspend fun getBonusesInfo(): Resource<BonusesInfo> {
-        return try {
-            val accessToken = loadAccessToken()
-            val bonusesResponse = loadBonusesInfo(accessToken)
-            Resource.Success<BonusesInfo>(convertBonusesResponse(bonusesResponse))
-        } catch (e: Exception) {
-            Resource.Error<BonusesInfo>("Error on receive or parse bonuses data")
+    override fun getBonusesInfo(): Flow<Resource<BonusesInfo>> {
+        return flow {
+            try {
+                emit(Resource.Loading<BonusesInfo>())
+                val accessToken = loadAccessToken()
+                val bonusesResponse = loadBonusesInfo(accessToken)
+                emit(Resource.Success<BonusesInfo>(
+                    convertBonusesResponse(bonusesResponse)))
+            } catch (e: Exception) {
+                emit(Resource.Error<BonusesInfo>("Error on receive or parse bonuses data"))
+            }
         }
     }
 
