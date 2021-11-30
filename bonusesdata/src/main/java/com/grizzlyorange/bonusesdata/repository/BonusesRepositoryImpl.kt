@@ -3,6 +3,7 @@ package com.grizzlyorange.bonusesdata.repository
 import android.util.Log
 import com.grizzlyorange.bonusesdata.api.BonusesRepository
 import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
+import com.grizzlyorange.bonusesdata.api.data.Resource
 import com.grizzlyorange.bonusesdata.repository.network.BonusesWebApi
 import com.grizzlyorange.bonusesdata.repository.network.data.AccessTokenRequestBody
 import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponse
@@ -16,14 +17,13 @@ class BonusesRepositoryImpl(
 ) : BonusesRepository {
     private val accessKey = "891cf53c-01fc-4d74-a14c-592668b7a03c"
 
-    override suspend fun getBonusesInfo(): BonusesInfo {
+    override suspend fun getBonusesInfo(): Resource<BonusesInfo> {
         return try {
             val accessToken = loadAccessToken()
             val bonusesResponse = loadBonusesInfo(accessToken)
-            convertBonusesResponse(bonusesResponse)
+            Resource.Success<BonusesInfo>(convertBonusesResponse(bonusesResponse))
         } catch (e: Exception) {
-            //TODO handle error
-            BonusesInfo((1..100).random())
+            Resource.Error<BonusesInfo>("Error on receive or parse bonuses data")
         }
     }
 
