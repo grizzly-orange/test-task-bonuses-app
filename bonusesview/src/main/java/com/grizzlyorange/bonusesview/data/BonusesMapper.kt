@@ -6,8 +6,8 @@ class BonusesMapper {
     companion object {
         fun fromDomainToView(bonusesInfo: BonusesInfo): BonusesViewInfo {
             return BonusesViewInfo(
-                bonusesInfo.totalBonusesAmount.toString(),
-                bonusesInfo.burningBonusesAmount.toString(),
+                bonusesInfo.totalBonusesAmount,
+                bonusesInfo.burningBonusesAmount,
                 bonusesInfo.burningDateInMillis
             )
         }

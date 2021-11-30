@@ -1,7 +1,7 @@
 package com.grizzlyorange.bonusesview.data
 
 data class BonusesViewInfo (
-    val totalBonusesAmount: String = "",
-    val burningBonusesAmount: String = "",
+    val totalBonusesAmount: Int = 0,
+    val burningBonusesAmount: Int = 0,
     val burningDateInMillis: Int = 0
 )

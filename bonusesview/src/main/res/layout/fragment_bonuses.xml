@@ -53,7 +53,7 @@
             android:layout_marginStart="@dimen/txt_bonuses_amount_margin_start"
             android:layout_marginTop="@dimen/txt_bonuses_amount_margin_top"
             android:elevation="@dimen/on_plate_evaluation"
-            android:text="TextView"
+            app:bonusesAmount="@{bonusesVM.bonuses.totalBonusesAmount}"
             android:textColor="@color/txt_bonuses_amount_text_color"
             android:textSize="@dimen/txt_bonuses_amount_text_size"
             android:textStyle="bold" />
@@ -80,7 +80,7 @@
             android:layout_marginBottom="@dimen/txt_burning_bonuses_amount_margin_bottom"
             android:layout_toEndOf="@id/fire"
             android:elevation="@dimen/on_plate_evaluation"
-            android:text="TextView"
+            app:bonusesAmount="@{bonusesVM.bonuses.burningBonusesAmount}"
             android:textColor="@color/txt_burning_bonuses_amount_text_color"
             android:textSize="@dimen/txt_burning_bonuses_amount_text_size" />
 
