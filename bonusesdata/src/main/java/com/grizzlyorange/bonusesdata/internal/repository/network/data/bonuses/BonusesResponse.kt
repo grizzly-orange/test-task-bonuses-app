@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesdata.repository.network.data
+package com.grizzlyorange.bonusesdata.internal.repository.network.data.bonuses
 
 data class BonusesResponse(
     val data: Data,

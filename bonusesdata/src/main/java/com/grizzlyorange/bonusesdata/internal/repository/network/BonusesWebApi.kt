@@ -1,8 +1,8 @@
-package com.grizzlyorange.bonusesdata.repository.network
+package com.grizzlyorange.bonusesdata.internal.repository.network
 
-import com.grizzlyorange.bonusesdata.repository.network.data.AccessTokenRequestBody
-import com.grizzlyorange.bonusesdata.repository.network.data.AccessTokenResponse
-import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponse
+import com.grizzlyorange.bonusesdata.internal.repository.network.data.token.AccessTokenRequestBody
+import com.grizzlyorange.bonusesdata.internal.repository.network.data.token.AccessTokenResponse
+import com.grizzlyorange.bonusesdata.internal.repository.network.data.bonuses.BonusesResponse
 import retrofit2.http.*
 
 interface BonusesWebApi {

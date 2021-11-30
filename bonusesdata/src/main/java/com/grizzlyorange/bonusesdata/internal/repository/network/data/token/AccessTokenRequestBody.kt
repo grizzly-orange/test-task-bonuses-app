@@ -1,6 +1,6 @@
-package com.grizzlyorange.bonusesdata.repository.network.data
+package com.grizzlyorange.bonusesdata.internal.repository.network.data.token
 
-import com.grizzlyorange.bonusesdata.api.data.ClientIdentityData
+import com.grizzlyorange.bonusesdata.api.data.identity.ClientIdentityData
 
 data class AccessTokenRequestBody(
     val accessToken: String = "",

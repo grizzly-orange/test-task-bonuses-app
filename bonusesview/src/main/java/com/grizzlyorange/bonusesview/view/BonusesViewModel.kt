@@ -1,9 +1,9 @@
 package com.grizzlyorange.bonusesview.view
 
 import androidx.lifecycle.*
-import com.grizzlyorange.bonusesdata.api.BonusesRepository
-import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
-import com.grizzlyorange.bonusesdata.api.data.ClientIdentityData
+import com.grizzlyorange.bonusesdata.api.repository.BonusesRepository
+import com.grizzlyorange.bonusesdata.api.data.bonuses.BonusesInfo
+import com.grizzlyorange.bonusesdata.api.data.identity.ClientIdentityData
 import com.grizzlyorange.bonusesdata.api.data.Resource
 import com.grizzlyorange.bonusesview.R
 import com.grizzlyorange.bonusesview.data.bonuses.BonusesMapper

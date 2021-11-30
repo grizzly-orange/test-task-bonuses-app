@@ -1,6 +1,6 @@
-package com.grizzlyorange.bonusesdata.repository.network.data
+package com.grizzlyorange.bonusesdata.internal.repository.network.data.bonuses
 
-import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
+import com.grizzlyorange.bonusesdata.api.data.bonuses.BonusesInfo
 import java.text.SimpleDateFormat
 import java.util.*
 

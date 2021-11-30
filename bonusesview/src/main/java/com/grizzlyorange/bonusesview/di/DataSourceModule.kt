@@ -1,7 +1,7 @@
 package com.grizzlyorange.bonusesview.di
 
-import com.grizzlyorange.bonusesdata.api.BonusesRepository
-import com.grizzlyorange.bonusesdata.api.BonusesRepositoryFactory
+import com.grizzlyorange.bonusesdata.api.repository.BonusesRepository
+import com.grizzlyorange.bonusesdata.api.repository.BonusesRepositoryFactory
 import com.grizzlyorange.bonusesview.data.identity.ClientIdentity
 import dagger.Module
 import dagger.Provides

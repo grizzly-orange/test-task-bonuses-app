@@ -1,7 +1,7 @@
-package com.grizzlyorange.bonusesdata.api
+package com.grizzlyorange.bonusesdata.api.repository
 
-import com.grizzlyorange.bonusesdata.repository.BonusesRepositoryImpl
-import com.grizzlyorange.bonusesdata.repository.network.NetworkService
+import com.grizzlyorange.bonusesdata.internal.repository.BonusesRepositoryImpl
+import com.grizzlyorange.bonusesdata.internal.repository.network.NetworkService
 
 class BonusesRepositoryFactory {
     companion object {

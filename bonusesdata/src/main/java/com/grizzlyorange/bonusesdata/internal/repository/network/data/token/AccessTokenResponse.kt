@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesdata.repository.network.data
+package com.grizzlyorange.bonusesdata.internal.repository.network.data.token
 
 data class AccessTokenResponse(
     val accessToken: String, // string

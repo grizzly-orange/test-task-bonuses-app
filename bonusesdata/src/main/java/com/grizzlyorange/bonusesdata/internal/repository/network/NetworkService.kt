@@ -1,4 +1,4 @@
-package com.grizzlyorange.bonusesdata.repository.network
+package com.grizzlyorange.bonusesdata.internal.repository.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

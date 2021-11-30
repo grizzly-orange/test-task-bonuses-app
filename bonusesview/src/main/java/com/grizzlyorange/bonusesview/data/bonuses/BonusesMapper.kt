@@ -1,6 +1,6 @@
 package com.grizzlyorange.bonusesview.data.bonuses
 
-import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
+import com.grizzlyorange.bonusesdata.api.data.bonuses.BonusesInfo
 
 class BonusesMapper {
     companion object {

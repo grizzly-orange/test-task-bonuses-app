@@ -1,19 +1,16 @@
-package com.grizzlyorange.bonusesdata.repository
+package com.grizzlyorange.bonusesdata.internal.repository
 
-import android.util.Log
-import com.grizzlyorange.bonusesdata.api.BonusesRepository
-import com.grizzlyorange.bonusesdata.api.data.BonusesInfo
-import com.grizzlyorange.bonusesdata.api.data.ClientIdentityData
+import com.grizzlyorange.bonusesdata.api.repository.BonusesRepository
+import com.grizzlyorange.bonusesdata.api.data.bonuses.BonusesInfo
+import com.grizzlyorange.bonusesdata.api.data.identity.ClientIdentityData
 import com.grizzlyorange.bonusesdata.api.data.Resource
-import com.grizzlyorange.bonusesdata.repository.network.BonusesWebApi
-import com.grizzlyorange.bonusesdata.repository.network.data.AccessTokenRequestBody
-import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponse
-import com.grizzlyorange.bonusesdata.repository.network.data.BonusesResponseConvertor
+import com.grizzlyorange.bonusesdata.internal.repository.network.BonusesWebApi
+import com.grizzlyorange.bonusesdata.internal.repository.network.data.token.AccessTokenRequestBody
+import com.grizzlyorange.bonusesdata.internal.repository.network.data.bonuses.BonusesResponse
+import com.grizzlyorange.bonusesdata.internal.repository.network.data.bonuses.BonusesResponseConvertor
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.lang.Exception
-import java.text.SimpleDateFormat
-import java.util.*
 
 class BonusesRepositoryImpl(
     private val bonusesWebApi: BonusesWebApi
