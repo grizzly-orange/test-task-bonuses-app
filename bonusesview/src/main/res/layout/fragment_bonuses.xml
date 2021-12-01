@@ -6,6 +6,9 @@
     <data>
         <import type="android.view.View" />
         <variable
+            name="userActionsHandler"
+            type="com.grizzlyorange.bonusesview.view.BonusesUserActionsHandler" />
+        <variable
             name="bonusesVM"
             type="com.grizzlyorange.bonusesview.view.BonusesViewModel" />
     </data>
@@ -44,6 +47,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/bt_info_margin_top"
             android:layout_marginEnd="@dimen/bt_info_margin_end"
+            android:onClick="@{() -> userActionsHandler.onBtInfoClicked()}"
             app:srcCompat="@drawable/button_info_image" />
 
         <ImageView
@@ -55,6 +59,7 @@
             android:layout_marginTop="@dimen/bt_next_margin_top"
             android:layout_marginEnd="@dimen/bt_info_margin_end"
             android:elevation="@dimen/on_plate_evaluation"
+            android:onClick="@{() -> userActionsHandler.onBtNextClicked()}"
             app:srcCompat="@drawable/button_next_image" />
 
         <TextView
@@ -107,6 +112,7 @@
             android:layout_toEndOf="@id/txtBurningDate"
             android:elevation="@dimen/on_plate_evaluation"
             app:srcCompat="@drawable/fire_icon"
+            android:onClick="@{() -> userActionsHandler.onFireClicked()}"
             android:visibility="@{bonusesVM.isSuccess ? View.VISIBLE : View.GONE}"
             />
 
@@ -138,7 +144,7 @@
             app:srcCompat="@drawable/bottom_rectangle" />
 
         <View
-            android:id="@+id/errorMessagesAnchor"
+            android:id="@+id/messagesAnchor"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_alignBottom="@id/bottom" />

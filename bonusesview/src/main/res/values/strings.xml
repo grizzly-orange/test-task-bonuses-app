@@ -1,10 +1,13 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- elements text -->
     <string name="txtBonusesBurningDate">%1$s сгорит</string>
 
+    <!-- messages text -->
     <string name="messageBonusesInfoResultError">Не удалось загрузить информацию о бонусах</string>
+    <!--Dummy texts-->
+    <string name="messageOnDummyBtClicked">Упс, здесь пока ничего не происходит</string>
+    <string name="messageOnFireClicked">Малыш, ты меня волнуешь (с)</string>
 
     <!--Bonuses plurals-->
     <plurals name="bonusesAmount">

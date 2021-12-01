@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
+import com.grizzlyorange.bonusesview.R
 import com.grizzlyorange.bonusesview.databinding.FragmentBonusesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BonusesFragment : Fragment() {
+class BonusesFragment : Fragment(), BonusesUserActionsHandler {
 
     private var _binding: FragmentBonusesBinding? = null
     private val binding get() = _binding!!
@@ -37,22 +38,35 @@ class BonusesFragment : Fragment() {
 
     private fun initBinding() {
         binding.bonusesVM = bonusesViewModel
+        binding.userActionsHandler = this
         binding.lifecycleOwner = viewLifecycleOwner
     }
 
     private fun initObservers() {
         bonusesViewModel.isError.observe(viewLifecycleOwner, { errorEvent ->
             errorEvent.getContentIfNotHandled()?.let { messageId ->
-                showErrorSnack(messageId)
+                showSnackbar(messageId)
             }
         })
     }
 
-    private fun showErrorSnack(messageId: Int) {
+    override fun onBtInfoClicked() {
+        showSnackbar(R.string.messageOnDummyBtClicked)
+    }
+
+    override fun onBtNextClicked() {
+        showSnackbar(R.string.messageOnDummyBtClicked)
+    }
+
+    override fun onFireClicked() {
+        showSnackbar(R.string.messageOnFireClicked)
+    }
+
+    private fun showSnackbar(messageId: Int) {
         view?.let {
             Snackbar
                 .make(binding.bottom, messageId, Snackbar.LENGTH_LONG)
-                .setAnchorView(binding.errorMessagesAnchor)
+                .setAnchorView(binding.messagesAnchor)
                 .show()
         }
     }
