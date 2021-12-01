@@ -1,6 +1,7 @@
 # test-task-bonuses-app
 The app displays information about user bonuses.
-![Screenshot_1638359659](https://user-images.githubusercontent.com/326673/144230182-994dd4d9-6e13-4ae9-881a-61ff0f84ff8f.png)
+
+![small](https://user-images.githubusercontent.com/326673/144238275-355026d8-8e69-4ac2-a64a-14fd82586a89.png)
 
 ## App features
 * to get bonuses info from network
@@ -30,5 +31,7 @@ BonusesView gets bonuses info via using BonusesData module.
 ![loading](https://user-images.githubusercontent.com/326673/144236988-bfd93cb6-eb59-4474-8989-99029921a8ae.png)
 ### Error message
 ![Screenshot_1638362405](https://user-images.githubusercontent.com/326673/144236921-12fd77eb-d9cb-4d13-8263-ce42e8504a85.png)
+### Success state
+![norm](https://user-images.githubusercontent.com/326673/144238934-e64f7d22-dbdc-414f-a663-a1686fde9602.png)
 ### Custom colors
 ![blue](https://user-images.githubusercontent.com/326673/144236930-5345294b-66c4-46d8-8f1b-be7b18c0e255.png)
