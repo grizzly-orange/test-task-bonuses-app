@@ -2,6 +2,9 @@ package com.grizzlyorange.bonusesview.api
 
 import com.grizzlyorange.bonusesview.data.identity.ClientIdentity
 
+/**
+ * Needs to setup clientId and deviceId at app module
+ */
 class SetupIdentity {
     companion object {
         var clientId: String
