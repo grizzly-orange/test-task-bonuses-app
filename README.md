@@ -33,5 +33,7 @@ BonusesView gets bonuses info via using BonusesData module.
 ![Screenshot_1638362405](https://user-images.githubusercontent.com/326673/144236921-12fd77eb-d9cb-4d13-8263-ce42e8504a85.png)
 ### Success state
 ![norm](https://user-images.githubusercontent.com/326673/144238934-e64f7d22-dbdc-414f-a663-a1686fde9602.png)
+### Reaction on user actions (click buttons)
+![reaction](https://user-images.githubusercontent.com/326673/144240625-48aafa10-1b45-4dcf-83de-652e36bfd24b.png)
 ### Custom colors
 ![blue](https://user-images.githubusercontent.com/326673/144236930-5345294b-66c4-46d8-8f1b-be7b18c0e255.png)
