@@ -19,7 +19,7 @@ App module uses BonusesFragment of BonusesView module.
 Also App module sets user identity (clientId, deviceId) to BonusesView and (as optional case) sets colors of elements and sizes of fonts.
 BonusesView gets bonuses info via using BonusesData module.
 
-![BonusesApp drawio](https://user-images.githubusercontent.com/326673/144233888-44be8b56-4854-4fb3-81f8-a9b585756443.png)
+![BonusesApp drawio(1)](https://user-images.githubusercontent.com/326673/144274778-cd4fbeeb-2b46-4c97-852e-8f29d4cdf15a.png)
 
 ## App uses
 * Fragments, ViewModel, Live data (+ livedata builder, livedata transformations), Kotlin coroutines (Kotlin Flow), event bus approach (for single-time events like errors), databinding, binding adapters, RelativeLayout, string pluralization.
