@@ -15,7 +15,6 @@ import java.lang.Exception
 class BonusesRepositoryImpl(
     private val bonusesWebApi: BonusesWebApi
 ) : BonusesRepository {
-    private val accessKey = "891cf53c-01fc-4d74-a14c-592668b7a03c"
 
     override fun getBonusesInfo(clientIdentity: ClientIdentityData): Flow<Resource<BonusesInfo>> {
         return flow {
@@ -33,13 +32,13 @@ class BonusesRepositoryImpl(
 
     private suspend fun loadAccessToken(identityData: ClientIdentityData): String {
         return bonusesWebApi
-            .getToken(accessKey, AccessTokenRequestBody.build(identityData))
+            .getToken(AccessTokenRequestBody.build(identityData))
             .accessToken
     }
 
     private suspend fun loadBonusesInfo(accessToken: String): BonusesResponse {
         return bonusesWebApi
-            .getBonusesInfo(accessKey, accessToken)
+            .getBonusesInfo(accessToken)
     }
 
     private fun convertBonusesResponse(bonusesResponse: BonusesResponse): BonusesInfo {
